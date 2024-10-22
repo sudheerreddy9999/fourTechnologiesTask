@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight:500
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fdf2f2;
+    color: black;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container now occupies the full width */
+.container {
+    position: relative;
+    width: 100%;
+}
+
+/* Left content takes full width */
+.left-content {
+    width: 100%;
+    background-color: #eb5d5d;
+    z-index: 1;
+}
+.FirstContent,h1{
+    width: 45%;
+    margin-left: 5%;
+    font-size: 40px;
+    color: aliceblue;
+}
+
+/* Adjust heading styles */
+.left-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Benefits list styling */
+.benefits-list {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 20px;
+    background-color: #fff4f4;
+    font-size: 1.2rem;
+}
+
+/* Benefit items styling */
+.benefit-item {
+    margin-bottom: 30px;
+}
+.benefits{
+    width: 50%;
+}
+
+/* Right form section styling */
+.right-form {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 400px;
+    margin-right: 100px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.right-form h2 {
+    color: #f04646;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+form input, form select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.secondHeading{
+    color: black;
+}
+
+/* Phone input styles */
+.phone-input {
+    display: flex;
+    align-items: center;
+}
+
+.phone-input span {
+    background-color: #f04646;
+    padding: 10px;
+    color: white;
+    border-radius: 5px 0 0 5px;
+}
+
+.phone-input input {
+    flex: 1;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Submit button */
+.submit-btn {
+    background-color: #f04646;
+    color: white;
+    padding: 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    background-color: #e02e2e;
+}
+
+/* Terms styling */
+.terms {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.terms a {
+    color: #f04646;
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .right-form {
+        width: 90%;
+        right: 5%;
+        top: 50px;
+    }
+
+    .left-content h1 {
+        font-size: 2rem;
+    }
+}
+ul{
+    font-size: 22px;
+    list-style: none;
+}
+
+.benefit-item {
+    display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 20px;
+   padding: 20px;
+   border-radius: 10px;
+}
+.benefit-item h3 {
+    color: #ff4954;
+}
+
+/* Text content styling */
+.benefit-text {
+     /* Take up available space for text */
+    padding-right: 20px; /* Add space between text and image */
+    flex: wrap;
+}
+
+.benefit-text h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.benefit-text p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Image styling */
+.benefit-image img {
+    max-width: 140px; /* Limit image width */
+    height: 140px; /* Maintain image aspect ratio */
+    border-radius: 10px; /* Optional: rounding the image corners */
+}
+img{
+    height: 400px;
+    width: 400px;
+}
+/* Adjust flex layout for smaller screens */
+@media (max-width: 768px) {
+    .benefit-item {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        text-align: center; /* Center the text when stacked */
+    }
+
+    .benefit-text {
+        padding-right: 0; /* Remove padding on smaller screens */
+    }
+
+    .benefit-image img {
+        max-width: 50px; /* Make image responsive */
+    }
+}
+img{
+    width: 100px;
+    height: 40px;
+}
+.item-section {
+    padding: 40px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.item-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f04646;
+}
+
+.item-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Space between items */
+    width: 50%;
+}
+
+.item {
+    background-color: transparent;
+    background-image: linear-gradient(360deg,#ff4954 0%,#f2295b 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: aliceblue;
+    opacity: 0; /* Start with an invisible state */
+    transform: translateY(20px); /* Initial position for transition effect */
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Apply ease-in-out transition */
+}
+
+/* When the item is visible (this class will be added via JavaScript) */
+.item.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.item img {
+    max-width: 140px; /* Adjust image size */
+    margin-bottom: 10px;
+    height: 100px;
+}
+
+.item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.item p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Hover effects */
+.item:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .item-container {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+    }
+}
+.pubishers{
+    background-color: #fff4f4;
+    color: black;
+    text-align: center;
+    padding: 40px;
+}
+.pubishers h1{
+    color: black;
+    text-align: center;
+}
+.footer {
+    display: flex;
+    justify-content: flex-start; /* Align items at the start */
+    align-items: center; /* Center items vertically */
+}
+.footer-text {
+    margin-right: 20px; /* Add some space between the text and image */
+}
+.footer-img1 {
+    max-width: 700px; /* Ensure the image is responsive */
+    height: 400px; /* Maintain aspect ratio */
+}
+#footerMessage{
+    font-size: 50px;
+    color: white;
+    padding: 50px;
+}
+.footer-text{
+    width: 40%;
+}
+.footerLastMessaage{
+    padding: 25px;
+    padding-left: 4px;
+    margin-left: 15px;
+    font-size: 18px;
+}
